@@ -518,17 +518,11 @@ function getData() {
   // Check if file parameter exists
   if (!queryParams.file) {
     // Add default file parameter and redirect
-<<<<<<< Updated upstream
-    const url = new URL(location.href);
-    url.searchParams.set("file", "dnsmasq");
-    location.assign(url.href);
-=======
     const url = new URL(globalThis.location.href);
 
     url.searchParams.set("file", "dnsmasq");
 
     globalThis.location.href = url.toString();
->>>>>>> Stashed changes
     return;
   }
 
@@ -733,17 +727,10 @@ document.getElementById("output").addEventListener(
     } = output;
 
     // Add a tolerance of four line heights
-<<<<<<< Updated upstream
-    // Use Number.parseFloat to convert the line height from a string (like "16px") to a number
-    // Using Number only would return NaN if the string contains non-numeric characters
-    //eslint-disable-next-line unicorn/prefer-number-coercion
-    const tolerance = 4 * Number.parseFloat(getComputedStyle(output).lineHeight);
-=======
     const tolerance =
       4 * Number.parseFloat(
         getComputedStyle(output).lineHeight
       );
->>>>>>> Stashed changes
 
     // Determine if the output is scrolled to the bottom within the tolerance
     const isAtBottom =
